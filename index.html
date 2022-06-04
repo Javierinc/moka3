@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>MOKA - Invierte Fácil</title>
+</head>
+<body>
+    <header>
+        <a href="./index.html">MOkA</a>
+    </header>
+    <main>
+        <section class="main-container">
+            <section class="form-container">
+                <form id="form">
+                    <label>Tu Inversión</label>
+                    <label for="years">Durante</label>
+                    <p id="years-ren">1 año</p>
+                    <input type="range" name="years" id="years" min="1" max="70" value="1">
+                    <label for="initial">Si empezaras con</label>
+                    <div>
+                        <span>$</span>
+                        <input type="number" name="initial" id="initial"  min="1" pattern="^[0-9]+">
+                    </div>
+                    <label for="monthly">Y al mes depositaras</label>
+                    <div>
+                        <span>$</span>
+                        <input type="number" name="monthly" id="monthly"  min="1" pattern="^[0-9]+">
+                    </div>
+                    
+                    <label for="profile">Riesgo</label>
+                    <select name="profile" id="profile">
+                        <option value="0">Conservador</option>
+                        <option value="1">Moderado</option>
+                        <option value="2">Arriesgado</option>
+                    </select>
+                    <p id="alert"></p>
+                    <button id="btn-cal" type="submit">Simular</button>
+                </form>
+            </section>
+            <section class="simulation-container hiden-container">
+                <div class="realistic-scenario">
+                    <div class="realistic-heading">
+                        <p id="result-years"></p>
+                        <p id="user-fund"></p>
+                    </div>
+                    <p id="result-realistic"></p>
+                </div>
+                <div class="scenarios-container">
+                    <div>
+                        <p class="header-results">Habrías invertido</p>
+                        <p id="result-total" class="info-res"></p>
+                    </div>
+                    <div>
+                        <p class="header-results">Escenario optimista</p>
+                        <p id="result-optimistic" class="info-res"></p>
+                    </div>
+                    <div>
+                        <p class="header-results">Escenario pesimista</p>
+                        <p id="result-pessimistic" class="info-res"></p>
+                    </div>
+                </div>
+                <div class="graph">
+                    <canvas id="myChart" width="440" height="224">
+                    </canvas>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p id="agf">Administradora General de Fondos - Regulada por la CMEFE</p>
+        <p id="copyright">Copyright &copy; 2022 by <span id="moka">MOkA</span></p>
+    </footer>
+    <script type="module" src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
